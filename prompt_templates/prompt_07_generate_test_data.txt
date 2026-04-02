@@ -14,7 +14,7 @@ Sinh bộ test data có cấu trúc cho các test cases đã cung cấp.
   - SĐT: 10 số, bắt đầu bằng 0
   - Mã KH: format KH-XXXX, tự sinh]
 
-# INSTRUCTIONS
+# CONSTRAINTS
 1. Sinh test data cho 4 nhóm:
    - Positive (hợp lệ): Data đúng format, đúng business rules
    - Negative (không hợp lệ): Data sai format, thiếu field, sai kiểu dữ liệu

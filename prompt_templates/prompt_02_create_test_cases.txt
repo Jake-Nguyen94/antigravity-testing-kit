@@ -10,7 +10,7 @@ Phân tích requirement và tạo bộ test case đầy đủ theo phương phá
 - Module: [Tên module cần test]
 - URL (nếu có): [URL hệ thống]
 
-# INSTRUCTIONS
+# CONSTRAINTS
 1. Phân tích requirement, xác định các luồng:
    - Happy Path (luồng chính)
    - Alternate Path (luồng rẽ nhánh)
@@ -31,7 +31,8 @@ Phân tích requirement và tạo bộ test case đầy đủ theo phương phá
    - Sai: "Nhập email hợp lệ"
 
 # OUTPUT FORMAT
-Bảng Markdown với các cột:
-| TC ID | Module | Risk Level | Test Scenario | Pre-Condition | Test Steps | Test Data | Expected Result | Priority |
+- Xuất kết quả ra file CSV (vd: testcases_module_name.csv) để mở trực tiếp bằng Excel.
+- Các cột bắt buộc:
+  TC ID, Module, Risk Level, Test Scenario, Pre-Condition, Test Steps, Test Data, Expected Result, Priority
+- Quy tắc TC ID: [DỰ_ÁN]_[MODULE]_TC_[SỐ] (Ví dụ: CRM_LOGIN_TC_001)
 
-Quy tắc TC ID: [DỰ_ÁN]_[MODULE]_TC_[SỐ] (Ví dụ: CRM_LOGIN_TC_001)

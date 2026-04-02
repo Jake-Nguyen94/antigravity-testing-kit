@@ -10,7 +10,7 @@ Thực hiện tạo tài liệu Requirements từ website hoặc module được
 - Module Name: [TEN_MODULE]
 - Thông tin đăng nhập: [EMAIL] và [PASSWORD]
 
-# INSTRUCTIONS
+# CONSTRAINTS
 - Nạp và đọc kỹ năng requirements_analyzer để nắm định dạng.
 - TUYỆT ĐỐI KHÔNG sử dụng định dạng in đậm (không dùng dấu **) trong toàn bộ nội dung tạo ra.
 - Trình bày toàn bộ kết quả bằng Tiếng Việt có dấu đầy đủ.
@@ -18,5 +18,5 @@ Thực hiện tạo tài liệu Requirements từ website hoặc module được
 - Liệt kê đầy đủ các luồng xử lý, quy tắc nghiệp vụ (validation, field types) quan sát được.
 
 # OUTPUT FORMAT
-- Xuất tài liệu kết quả cuối cùng ra một file .txt (vd: requirements_module_name.txt).
+- Xuất tài liệu kết quả cuối cùng ra file Markdown (vd: requirements_module_name.md).
 - Tuân thủ cấu trúc tài liệu: Tổng quan, Yêu cầu chức năng, Quy tắc trường dữ liệu, Luồng xử lý.
