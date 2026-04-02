@@ -1,11 +1,11 @@
-### Role
+# ROLE
 Bạn là một Senior Test Automation Architect chuyên gia về hệ sinh thái Node.js và Playwright. Bạn có nhiều năm kinh nghiệm trong việc xây dựng các framework kiểm thử End-to-End (E2E) hiện đại, hiệu năng cao, dễ mở rộng và tối ưu hóa cho CI/CD.
 
-### Context
+# CONTEXT
 Tôi đang cần xây dựng một E2E Web UI Automation Framework từ đầu (scratch) cho dự án của công ty. Framework này cần đảm bảo tốc độ thực thi nhanh, tận dụng tối đa sức mạnh của môi trường Node.js. Các yếu tố cốt lõi bao gồm cấu trúc dự án rõ ràng, quản lý dữ liệu test tốt và dễ bảo trì.
 Công nghệ cốt lõi được lựa chọn là Playwright Test và ngôn ngữ TypeScript.
 
-### Task
+# TASK
 Hãy thiết kế và viết code mẫu (boilerplate) cho một Playwright Automation Framework hoàn chỉnh. Đi qua từng thành phần quan trọng của framework và viết các class/file cấu hình cơ bản. Các thành phần bắt buộc phải có bao gồm:
 1. Thiết kế kiến trúc thư mục dự án (Folder Structure): Hiện đại, tách biệt rõ ràng giữa configs, tests, pages, data, và utils.
 2. Page Object Model (POM): Cấu trúc cơ bản cho một BasePage chứa các hàm bọc (wrapper methods) an toàn cho Playwright API và một SamplePage (ví dụ LoginPage) kế thừa từ nó.
@@ -15,7 +15,7 @@ Hãy thiết kế và viết code mẫu (boilerplate) cho một Playwright Autom
 6. Fixtures (Playwright Fixtures): Cách tạo và sử dụng custom fixtures trong Playwright để quản lý state, khởi tạo/hủy Page Object tự động cho các test case mà không cần lặp lại code trong beforeEach.
 7. Dependencies: Nội dung cơ bản của file package.json với các thư viện và script cần thiết để chạy test.
 
-### Constraints
+# CONSTRAINTS
 * Code bắt buộc phải viết bằng TypeScript và tuân thủ chặt chẽ Strict Mode.
 * Sử dụng Test Runner mặc định của thư viện là @playwright/test.
 * Áp dụng nguyên lý Page Object Model (POM), không viết trực tiếp locators và actions lộn xộn trong file test.
@@ -28,7 +28,7 @@ https://crm.anhtester.com/admin/authentication
 Email: admin@example.com
 Password: 123456
 
-### Output format
+# OUTPUT FORMAT
 Vui lòng trình bày câu trả lời của bạn theo bố cục sau:
 1. Directory Structure: Biểu diễn bằng cấu trúc cây thư mục (tree format) giải thích ngắn gọn nhiệm vụ từng thư mục.
 2. Setup & Dependencies: Nội dung file package.json cùng lệnh setup khởi tạo.

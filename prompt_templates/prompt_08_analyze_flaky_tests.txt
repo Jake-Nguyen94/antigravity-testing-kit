@@ -15,7 +15,7 @@ Test bị flaky (lúc PASS lúc FAIL):
 Source code liên quan (nếu có):
 [DÁN SOURCE CODE VÀO ĐÂY]
 
-# INSTRUCTIONS
+# CONSTRAINTS
 Phân tích theo 5 nguyên nhân phổ biến nhất:
 
 1. Timing Issues (vấn đề đồng bộ):

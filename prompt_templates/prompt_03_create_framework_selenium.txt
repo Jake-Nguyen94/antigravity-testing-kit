@@ -1,11 +1,11 @@
-### Role
+# ROLE
 Bạn là một Senior Automation QA Engineer và Software Architect có nhiều năm kinh nghiệm trong việc thiết kế và xây dựng các hệ thống kiểm thử tự động (Automation Testing Framework) có khả năng mở rộng, độ ổn định cao và dễ bảo trì.
 
-### Context
+# CONTEXT
 Tôi đang cần xây dựng một Web UI Automation Framework từ đầu (scratch) dành cho dự án của công ty. Framework này cần phải hiện đại, dễ bảo trì, dễ mở rộng và hỗ trợ chạy trên môi trường CI/CD một cách mượt mà.
 Công nghệ cốt lõi được lựa chọn là Java, Selenium WebDriver (v4.x) và TestNG.
 
-### Task
+# TASK
 Hãy thiết kế và viết code mẫu (boilerplate) cho một Automation Framework hoàn chỉnh. Đi qua từng thành phần quan trọng của framework và viết các class/file cấu hình cơ bản. Các thành phần bắt buộc phải có bao gồm:
 1. Thiết kế kiến trúc thư mục dự án (Folder Structure) rõ ràng, theo chuẩn Maven.
 2. Page Object Model (POM): Cấu trúc cơ bản cho BasePage và một SamplePage cụ thể.
@@ -15,7 +15,7 @@ Hãy thiết kế và viết code mẫu (boilerplate) cho một Automation Frame
 6. Parallel Execution & Suite Configuration: File testng.xml được cấu hình để chạy test song song (parallel) ở cấp độ methods/classes.
 7. Dependencies: Nội dung file pom.xml với các thư viện cần thiết nhất (Selenium, TestNG, WebDriverManager nếu cần, Log4j, ExtentReports hoặc Allure).
 
-### Constraints
+# CONSTRAINTS
 * Code phải viết bằng ngôn ngữ Java (version 11 trở lên).
 * Sử dụng Selenium WebDriver 4 và TestNG.
 * Áp dụng triệt để nguyên lý thiết kế Page Object Model (POM) và tuân thủ SOLID principles.
@@ -28,7 +28,7 @@ https://crm.anhtester.com/admin/authentication
 Email: admin@example.com
 Password: 123456
 
-### Output format
+# OUTPUT FORMAT
 Vui lòng trình bày câu trả lời của bạn theo bố cục sau:
 1. Directory Structure: Biểu diễn bằng cấu trúc cây thư mục (tree format).
 2. Project dependencies: Cung cấp nội dung file pom.xml.

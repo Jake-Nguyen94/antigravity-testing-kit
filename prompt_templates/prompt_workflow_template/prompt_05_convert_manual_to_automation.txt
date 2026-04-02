@@ -13,19 +13,6 @@ Hệ thống: [Web / Mobile App] tại URL: [URL hoặc Package name]
 
 [NỘI DUNG TEST CASE DÁN VÀO ĐÂY]
 
-# CONSTRAINTS
-1. Page Object Model: Phân tách rõ Page objects, Test execution, Utils/Test data.
-2. Locator Strategy:
-   - Ưu tiên inspect DOM thật bằng MCP browser.
-   - TUYỆT ĐỐI KHÔNG đoán locator.
-   - Thứ tự ưu tiên: tham khảo .agent/rules/locator_strategy.md
-3. Smart Waits:
-   - KHÔNG dùng Thread.sleep hoặc waitForTimeout.
-   - CHỈ dùng auto-waiting, expect().toBeVisible(), WebDriverWait.
-4. Test Data unique + traceable: auto_[testName]_[timestamp]@test.com
-5. Code clean, comment tiếng Việt, không debug logs thừa.
-6. Tự chạy test sau khi viết. Nếu FAIL thì tự sửa đến khi PASS.
-
 # OUTPUT FORMAT
 1. Giải thích tóm tắt logic (2-3 câu)
 2. Cấu trúc file dự kiến

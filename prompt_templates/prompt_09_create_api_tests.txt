@@ -24,7 +24,7 @@ GET /api/customers/{id}
 - Response 404: { error: "Not found" }
 ]
 
-# INSTRUCTIONS
+# CONSTRAINTS
 1. Viết test cover đủ các HTTP status codes:
    - 200/201: Thành công
    - 400: Validation lỗi (thiếu field, sai format)

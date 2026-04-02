@@ -38,6 +38,8 @@ Use this skill when the user asks about:
 - Flaky test debugging
 - Locator generation
 - Requirements analysis from website
+- Jira integration (fetch requirements, push test results)
+- Xray test management
 
 Typical prompts include:
 
@@ -193,6 +195,32 @@ Triggers when user asks:
 - generate requirements from website
 - analyze website module and create requirements
 - extract user stories from web page
+
+---
+
+### Fetch requirements from Jira
+
+Use workflow: `fetch_jira_requirements`
+
+Triggers when user asks:
+
+- fetch jira requirements
+- lấy requirement từ jira
+- get jira ticket
+- import user stories from jira
+
+---
+
+### Import test results to Xray
+
+Use workflow: `import_test_results_xray`
+
+Triggers when user asks:
+
+- push test results to xray
+- đẩy kết quả test lên xray
+- import test execution to jira
+- upload playwright results to xray
 
 ---
 

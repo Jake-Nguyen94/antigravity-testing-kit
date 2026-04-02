@@ -4,7 +4,14 @@
 
 ## 1. Thiết Lập Browser (BẮT BUỘC)
 
-- **Viewport debug:** Mọi quá trình debug UI bắt buộc chạy với viewport desktop (tiêu chuẩn: `1920x1080`).
+- **Viewport debug:** Mọi quá trình debug UI bắt buộc chạy với viewport desktop: **`1920x1080`**.
+- **Playwright MCP — Resize bắt buộc:** Khi sử dụng Playwright MCP để debug UI, **LUÔN LUÔN** gọi `browser_resize(width=1920, height=1080)` **ngay sau khi mở browser** (sau lệnh `browser_navigate` đầu tiên). Đây là bước bắt buộc, không được bỏ qua.
+  ```
+  Thứ tự bắt buộc:
+  1. browser_navigate(url) → mở trang
+  2. browser_resize(width=1920, height=1080) → set viewport
+  3. browser_snapshot() hoặc browser_take_screenshot() → bắt đầu inspect
+  ```
 - **Headed mode:** Bắt buộc mở browser có hiển thị (headed) trong quá trình thiết lập và debug test.
 - **Headless mode:** Chỉ được phép sử dụng khi:
   - Test đã debug PASS 100% trên headed mode

@@ -90,3 +90,14 @@ requirements/
 .playwright-mcp/
 .selenium-mcp/
 .appium-mcp/
+
+# Environment & credentials
+.env
+.env.local
+.env.*.local
+
+# Node modules
+node_modules/
+
+# Xray token cache
+.xray_token_cache.json
