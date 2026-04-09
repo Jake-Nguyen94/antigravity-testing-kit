@@ -86,7 +86,6 @@ artifacts/
 .agent/tmp/
 
 # Temp data/files
-requirements/
 .playwright-mcp/
 .selenium-mcp/
 .appium-mcp/
