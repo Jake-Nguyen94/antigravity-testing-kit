@@ -35,7 +35,8 @@ antigravity-testing-kit/
 ├── prompt_template/     # Prompt mẫu dùng nhanh (copy → paste → gửi)
 ├── scripts/
 │   └── integrations/    # Tích hợp công cụ bên ngoài
-│       └── jira/        # Jira & Xray integration (self-contained)
+│       ├── jira/        # Jira & Xray integration (self-contained)
+│       └── google_sheet/# Đọc/ghi dữ liệu với Google Sheets
 ├── requirements/        # Lưu trữ requirements đã sinh
 ├── GEMINI.md            # Rule chung cho AI Agent
 └── TIPS_QUOTA.md        # Cẩm nang tối ưu quota token
@@ -57,6 +58,7 @@ Mỗi integration là **thư mục self-contained** (tự quản dependencies, c
 | Integration | Chức năng | Docs |
 |-------------|-----------|------|
 | `jira/` | Lấy Requirements từ Jira, xác thực Xray, đẩy kết quả test lên Xray | [README](scripts/integrations/jira/README.md) |
+| `google_sheet/` | Đồng bộ, đọc/ghi dữ liệu test từ Google Sheets qua API | [README](scripts/integrations/google_sheet/README.md) |
 
 ```bash
 # Cài đặt nhanh (ví dụ Jira)
