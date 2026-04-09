@@ -101,5 +101,8 @@ node_modules/
 # Xray token cache
 .xray_token_cache.json
 
-# Google Service Account
+# Google Service Account (ignore both naming conventions)
 service_account.json
+service-account.json
+*service-account*.json
+*service_account*.json
