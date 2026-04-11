@@ -4,17 +4,25 @@
 Tôi cần xây dựng Web UI Automation Framework từ đầu.
 - Công nghệ: Java 17+ + Selenium WebDriver v4 + TestNG
 - Build tool: Maven
+- Report: Allure Report
+- Logging: Log4j 2.x
 
-Dùng thông tin đăng nhập:
+# HỆ THỐNG
 - URL: [URL hệ thống]
-- Email: [EMAIL]
-- Password: [PASSWORD]
+- Tài khoản test: [EMAIL] / [PASSWORD]
 
 # OUTPUT FORMAT
 1. Directory Structure (tree format)
-2. pom.xml
-3. Core Components (ConfigReader.java, DriverFactory.java)
-4. Base Classes (BaseTest.java, BasePage.java)
-5. Implementations (LoginPage.java, LoginTest.java)
-6. Test Data & Runner (testng.xml)
-7. Hướng dẫn chạy (How to run)
+2. pom.xml (dependencies + plugins)
+3. Core: ConfigReader.java, DriverFactory.java
+4. Base: BaseTest.java, BasePage.java
+5. Pages: LoginPage.java (locator từ DOM thực tế)
+6. Tests: LoginTest.java (example test)
+7. Utils: TestDataGenerator.java, WaitHelper.java, ScreenshotUtil.java
+8. Config: testng.xml, log4j2.xml, .env.example
+9. CI/CD: .github/workflows/selenium.yml (nếu cần)
+10. README.md (hướng dẫn setup + chạy test)
+
+# GHI CHÚ
+- Agent tự scaffold toàn bộ project structure
+- Agent tự verify framework hoạt động (compile + chạy example test)

@@ -1,5 +1,15 @@
 # 🧹 Global Rule
 
+## 🔐 Security & Credentials (ƯU TIÊN CAO NHẤT — ĐỌC TRƯỚC)
+
+> ⚠️ **Quy tắc này có hiệu lực ngay khi bắt đầu task. AI PHẢI đọc và tuân thủ trước khi làm bất kỳ hành động nào liên quan đến xác thực.**
+
+### ❌ CẤM đọc file `.env` trực tiếp
+
+AI **KHÔNG ĐƯỢC** sử dụng bất kỳ công cụ nào (`view_file`, `read_url_content`, `run_command`, `grep`, v.v.) để đọc nội dung file `.env` nhằm mục đích lấy thông tin đăng nhập (username, password, token, API key...).
+
+> **Lý do:** File `.env` chứa credentials nhạy cảm. Việc đọc trực tiếp có nguy cơ lộ thông tin trong log, chat history hoặc artifact AI.
+
 ## Ngôn ngữ
 
 - Mặc định giao tiếp, phân tích và giải thích mã nguồn bằng Tiếng Việt.
@@ -23,16 +33,16 @@ AI **bắt buộc** phải dọn dẹp mọi file tạm, file debug, hoặc file
 
 ### Các loại file phải xóa
 
-| Pattern | Mô tả |
-|---------|-------|
-| `*_debug.txt` | File debug tạm thời (vd: `tc029_debug.txt`) |
-| `debug_output.txt`, `*_output.txt` | Output dump tạm thời |
-| `*.tmp`, `*.temp` | File temp hệ thống |
-| `page_snapshot.md`, `snapshot_*.md` | Snapshot trang web tạm |
-| `dom_dump.txt`, `html_dump.html` | DOM dump tạm |
-| `network_requests.txt`, `console_log.txt` | Log mạng/console tạm |
-| `scratch_*.py`, `scratch_*.js`, `scratch_*.ts` | Script tạm thời |
-| File `.py/.js/.ts` nằm ngoài `src/`, `tests/`, `scripts/` | Script lạc chỗ |
+| Pattern                                                             | Mô tả                                        |
+| ------------------------------------------------------------------- | ---------------------------------------------- |
+| `*_debug.txt`                                                     | File debug tạm thời (vd:`tc029_debug.txt`) |
+| `debug_output.txt`, `*_output.txt`                              | Output dump tạm thời                         |
+| `*.tmp`, `*.temp`                                               | File temp hệ thống                           |
+| `page_snapshot.md`, `snapshot_*.md`                             | Snapshot trang web tạm                        |
+| `dom_dump.txt`, `html_dump.html`                                | DOM dump tạm                                  |
+| `network_requests.txt`, `console_log.txt`                       | Log mạng/console tạm                         |
+| `scratch_*.py`, `scratch_*.js`, `scratch_*.ts`                | Script tạm thời                              |
+| File `.py/.js/.ts` nằm ngoài `src/`, `tests/`, `scripts/` | Script lạc chỗ                               |
 
 ---
 

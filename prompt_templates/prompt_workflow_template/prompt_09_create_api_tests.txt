@@ -1,13 +1,18 @@
 /generate_api_tests_from_swagger
 
 # CONTEXT
-- Framework: [REST Assured (Java) / Playwright API (TypeScript) / Supertest (TypeScript)]
-- Base URL: [Ví dụ: https://api.anhtester.com/v1]
-- Authentication: [Bearer Token / Basic Auth / API Key]
-- Swagger URL (nếu có): [URL Swagger]
+- Framework: [REST Assured (Java) / Playwright API (TypeScript) / Supertest (TypeScript) / Requests + Pytest (Python)]
+- Mode: [SPEC (chỉ test cases) / FULL (test cases + automation scripts)]
+- Authentication: [Bearer Token / Basic Auth / API Key / OAuth2]
 
-API cần test:
-[DÁN MÔ TẢ API VÀO ĐÂY. Ví dụ:
+# API SPECIFICATION
+[Cung cấp 1 trong các cách sau:]
+
+## Cách 1: Swagger/OpenAPI URL
+- Swagger URL: [https://api.example.com/swagger.json]
+
+## Cách 2: Mô tả API thủ công
+- Base URL: [https://api.example.com/v1]
 
 POST /api/customers
 - Request: { name, email, phone }
@@ -17,10 +22,29 @@ POST /api/customers
 GET /api/customers/{id}
 - Response 200: { id, name, email, phone }
 - Response 404: { error: "Not found" }
-]
+
+PUT /api/customers/{id}
+- Request: { name, email, phone }
+- Response 200: { id, name, email, phone, updatedAt }
+
+DELETE /api/customers/{id}
+- Response 204: No content
+- Response 404: { error: "Not found" }
 
 # OUTPUT FORMAT
-1. API Client/Helper: Base URL, auth headers
-2. Test Class: Test methods theo CRUD
-3. Test Data: Request bodies
-4. Hướng dẫn chạy
+## Mode SPEC:
+1. API Overview (base URL, auth, endpoints)
+2. Test Cases chi tiết (Happy Path + Negative + Boundary + Edge Cases)
+3. Test Data Matrix (valid / invalid / boundary)
+
+## Mode FULL:
+1. Tất cả Mode SPEC, cộng thêm:
+2. API Client/Helper class (base URL, auth, logging)
+3. Model/DTO classes
+4. Test classes (assertions: status code + body + schema)
+5. Test Data generators
+6. Kết quả chạy test (PASS/FAIL summary)
+
+# GHI CHÚ
+- Mode SPEC: Agent chỉ sinh test cases dạng tài liệu
+- Mode FULL: Agent sinh code + chạy test + auto-heal nếu FAIL
