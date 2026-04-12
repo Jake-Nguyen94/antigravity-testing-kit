@@ -11,6 +11,18 @@
 - URL: [URL hệ thống]
 - Tài khoản test: [Dùng fixture sẵn có / hoặc EMAIL + PASSWORD]
 
+# PROJECT (chọn 1 trong 2)
+
+## A. Đã có sẵn source code (EXISTING PROJECT)
+- Project path: [path/to/project]
+- Agent PHẢI đọc project structure, base classes, config trước khi sinh code
+- Agent PHẢI tuân thủ conventions đã có (naming, folder, patterns)
+- Agent PHẢI reuse BasePage, BaseTest, DriverFactory, Utils — KHÔNG tạo trùng
+- Agent PHẢI sinh file đúng vị trí trong project structure hiện tại
+
+## B. Chưa có project (NEW PROJECT)
+- Agent tự scaffold structure theo workflow /generate_automation_framework
+
 # TEST CASES
 [DÁN TEST CASES VÀO ĐÂY — dưới dạng bảng hoặc danh sách steps]
 
@@ -20,12 +32,13 @@ Ví dụ:
 | TC01 | Login thành công | 1. Mở trang login 2. Nhập email 3. Nhập password 4. Click Login | Dashboard hiển thị | P1 |
 
 # OUTPUT FORMAT
-1. Page Object: [Tên]Page.java — locator từ DOM thực tế
-2. Test Class: [Tên]Test.java — Arrange → Act → Assert
-3. Utils: TestDataGenerator.java (nếu cần)
+1. Page Object: [Tên]Page.java — locator từ DOM thực tế, kế thừa BasePage (nếu có)
+2. Test Class: [Tên]Test.java — dùng BaseTest + TestNG annotations
+3. Utils: Reuse utils hiện có hoặc bổ sung nếu cần
 4. Artifact task.md — checklist tiến độ
 5. Kết quả: PASS/FAIL summary (test phải PASS 2 lần liên tiếp)
 
 # GHI CHÚ
 - Agent tự mở browser, inspect UI, thu thập locators từ DOM thực tế
 - Agent tự chạy test và auto-heal nếu FAIL (không hỏi user — Rule E3)
+- Nếu existing project: agent đọc code trước → tuân thủ patterns đã có

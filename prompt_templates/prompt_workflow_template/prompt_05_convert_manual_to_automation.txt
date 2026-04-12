@@ -11,6 +11,18 @@
 - Tài khoản test: [Dùng fixture sẵn có / hoặc EMAIL + PASSWORD]
 - Môi trường: [Dev / Staging / Production]
 
+# PROJECT (chọn 1 trong 2)
+
+## A. Đã có sẵn source code (EXISTING PROJECT)
+- Project path: [path/to/project]
+- Agent PHẢI đọc project structure, base classes, fixtures, config trước khi sinh code
+- Agent PHẢI tuân thủ conventions đã có (naming, folder, patterns)
+- Agent PHẢI reuse base classes, fixtures, utils — KHÔNG tạo trùng
+- Agent PHẢI sinh file đúng vị trí trong project structure hiện tại
+
+## B. Chưa có project (NEW PROJECT)
+- Agent tự scaffold structure theo workflow /generate_automation_framework
+
 # TEST CASES
 [Một trong 3 cách cung cấp test cases:]
 
@@ -27,9 +39,9 @@ File test cases: [path/to/testcases.md]
 URL test cases: [https://docs.google.com/spreadsheets/...]
 
 # OUTPUT FORMAT
-1. Page Object classes (locator từ DOM thực tế)
-2. Test classes (Arrange → Act → Assert)
-3. Test data utilities (unique + traceable)
+1. Page Object classes (locator từ DOM thực tế, kế thừa base nếu có)
+2. Test classes (dùng fixtures sẵn có, Arrange → Act → Assert)
+3. Test data utilities (reuse hoặc bổ sung)
 4. Artifact task.md (checklist tiến độ)
 5. Kết quả chạy test (PASS/FAIL summary)
 
@@ -37,3 +49,4 @@ URL test cases: [https://docs.google.com/spreadsheets/...]
 - Agent tự mở browser inspect UI, thu thập locators thực tế
 - Agent tự chạy test và auto-heal nếu FAIL (Rule E3)
 - Test phải PASS 2 lần liên tiếp mới bàn giao
+- Nếu existing project: agent đọc code trước → tuân thủ patterns đã có
