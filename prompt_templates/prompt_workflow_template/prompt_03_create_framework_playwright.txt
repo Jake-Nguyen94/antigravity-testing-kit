@@ -11,17 +11,13 @@ Tôi cần xây dựng E2E Web UI Automation Framework từ đầu.
 - Tài khoản test: [EMAIL] / [PASSWORD]
 
 # OUTPUT FORMAT
-1. Directory Structure (tree format)
-2. Setup: package.json, tsconfig.json
-3. Config: playwright.config.ts, .env.example
-4. Base: BasePage.ts (common methods)
-5. Fixtures: auth.fixture.ts (login fixture)
-6. Pages: LoginPage.ts (locator từ DOM thực tế)
-7. Tests: login.spec.ts (example test)
-8. Utils: TestDataGenerator.ts, env.config.ts
-9. CI/CD: .github/workflows/playwright.yml (nếu cần)
-10. README.md (hướng dẫn setup + chạy test)
+- Setup package.json, tsconfig.json, playwright.config.ts
+- Triển khai Base classes, Fixtures
+- Khởi tạo Sample Page Object & Test
+- Cấu hình Environment & Utilities
+- Thiết lập CI/CD (GitHub Actions)
+- README.md hướng dẫn
 
 # GHI CHÚ
-- Agent tự scaffold toàn bộ project structure
-- Agent tự verify framework hoạt động (npm install + chạy example test)
+- Agent tự scaffold TOÀN BỘ project structure dựa trên design gốc tại skill framework_architect.
+- Agent tự verify framework hoạt động (npm install + chạy example test).

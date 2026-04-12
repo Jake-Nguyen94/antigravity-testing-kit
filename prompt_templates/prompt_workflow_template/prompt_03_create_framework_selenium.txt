@@ -12,17 +12,13 @@ Tôi cần xây dựng Web UI Automation Framework từ đầu.
 - Tài khoản test: [EMAIL] / [PASSWORD]
 
 # OUTPUT FORMAT
-1. Directory Structure (tree format)
-2. pom.xml (dependencies + plugins)
-3. Core: ConfigReader.java, DriverFactory.java
-4. Base: BaseTest.java, BasePage.java
-5. Pages: LoginPage.java (locator từ DOM thực tế)
-6. Tests: LoginTest.java (example test)
-7. Utils: TestDataGenerator.java, WaitHelper.java, ScreenshotUtil.java
-8. Config: testng.xml, log4j2.xml, .env.example
-9. CI/CD: .github/workflows/selenium.yml (nếu cần)
-10. README.md (hướng dẫn setup + chạy test)
+- Setup pom.xml (dependencies + plugins)
+- Triển khai Core components, Base classes
+- Khởi tạo Sample Page Object & Test
+- Cấu hình Utilities (Test Data, Logs, Screenshots)
+- Thiết lập CI/CD (GitHub Actions)
+- README.md hướng dẫn
 
 # GHI CHÚ
-- Agent tự scaffold toàn bộ project structure
-- Agent tự verify framework hoạt động (compile + chạy example test)
+- Agent tự scaffold BẢNG project structure dựa trên skill framework_architect.
+- Agent tự verify framework hoạt động (compile + chạy example test).

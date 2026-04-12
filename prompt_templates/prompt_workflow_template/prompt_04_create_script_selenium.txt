@@ -32,11 +32,11 @@ Ví dụ:
 | TC01 | Login thành công | 1. Mở trang login 2. Nhập email 3. Nhập password 4. Click Login | Dashboard hiển thị | P1 |
 
 # OUTPUT FORMAT
-1. Page Object: [Tên]Page.java — locator từ DOM thực tế, kế thừa BasePage (nếu có)
-2. Test Class: [Tên]Test.java — dùng BaseTest + TestNG annotations
-3. Utils: Reuse utils hiện có hoặc bổ sung nếu cần
-4. Artifact task.md — checklist tiến độ
-5. Kết quả: PASS/FAIL summary (test phải PASS 2 lần liên tiếp)
+- Page Object classes (Sinh đúng thư mục pages & tuân thủ naming convention)
+- Test classes (Kế thừa BaseTest, dùng TestNG annotations)
+- Utilities / Data Generators (Reuse utils hiện có hoặc bổ sung nếu cần)
+- Artifact task.md (checklist tiến độ các bước)
+- Kết quả chạy test (PASS/FAIL summary - test phải PASS 2 lần liên tiếp)
 
 # GHI CHÚ
 - Agent tự mở browser, inspect UI, thu thập locators từ DOM thực tế

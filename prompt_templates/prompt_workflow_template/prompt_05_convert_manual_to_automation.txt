@@ -8,7 +8,7 @@
 
 # HỆ THỐNG
 - URL: [URL ứng dụng]
-- Tài khoản test: [Dùng fixture sẵn có / hoặc EMAIL + PASSWORD]
+- Tài khoản test: [Dùng fixture/config sẵn có / hoặc EMAIL + PASSWORD]
 - Môi trường: [Dev / Staging / Production]
 
 # PROJECT (chọn 1 trong 2)
@@ -39,14 +39,13 @@ File test cases: [path/to/testcases.md]
 URL test cases: [https://docs.google.com/spreadsheets/...]
 
 # OUTPUT FORMAT
-1. Page Object classes (locator từ DOM thực tế, kế thừa base nếu có)
-2. Test classes (dùng fixtures sẵn có, Arrange → Act → Assert)
-3. Test data utilities (reuse hoặc bổ sung)
-4. Artifact task.md (checklist tiến độ)
-5. Kết quả chạy test (PASS/FAIL summary)
+- Page Object classes (Sinh code đúng vị trí theo conventions)
+- Test classes (Kế thừa base hoặc fixture sẵn có, Arrange → Act → Assert)
+- Utilities / Data Generators (Reuse hoặc bổ sung mới)
+- Artifact task.md (checklist tiến độ các bước)
+- Kết quả chạy test (PASS/FAIL summary - test phải PASS 2 lần liên tiếp)
 
 # GHI CHÚ
 - Agent tự mở browser inspect UI, thu thập locators thực tế
 - Agent tự chạy test và auto-heal nếu FAIL (Rule E3)
-- Test phải PASS 2 lần liên tiếp mới bàn giao
 - Nếu existing project: agent đọc code trước → tuân thủ patterns đã có
