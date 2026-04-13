@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # Quy Tắc Dành Riêng Cho Selenium WebDriver
 
 > Áp dụng khi tự động hóa browser với Java và Selenium WebDriver.

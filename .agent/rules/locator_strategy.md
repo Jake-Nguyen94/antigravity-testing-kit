@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # Chiến Lược Chọn Locator (Áp Dụng Mọi Framework)
 
 > Độ ổn định và khả năng đọc hiểu của locator quyết định sức khỏe của một automation framework.

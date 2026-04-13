@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # Quy Tắc Chung cho QA Automation
 
 > Áp dụng cho mọi tác vụ automation testing, bất kể framework (Playwright, Selenium, Appium).

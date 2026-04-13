@@ -1,7 +1,5 @@
 ---
 description: Generate stable UI locator for automation testing.
-skills:
-  - smart_locator_agent
 ---
 
 > **BẮT BUỘC (MANDATORY SKILL):** Bạn PHẢI nạp và đọc kỹ nội dung của skill **`smart-locator-agent`** (tại `.agent/skills/smart_locator_agent/SKILL.md`) trước khi bắt đầu thực hiện tác vụ này.

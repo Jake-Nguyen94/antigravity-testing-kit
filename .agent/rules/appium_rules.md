@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # Quy Tắc Dành Riêng Cho Appium (Mobile Automation)
 
 > Áp dụng khi tự động hóa ứng dụng mobile với Java và Appium.

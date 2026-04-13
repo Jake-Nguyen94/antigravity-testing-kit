@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # Quy Tắc Dành Riêng Cho Playwright
 
 > Áp dụng khi thiết lập và chạy automation với Playwright (TypeScript hoặc Java).
