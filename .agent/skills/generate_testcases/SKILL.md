@@ -48,4 +48,4 @@ Xuất kết quả dưới định dạng bảng Markdown (hoặc Artifact dạn
 - **BẮT BUỘC** dùng dữ liệu cụ thể: "Nhập email: user_test@gmail.com", "Nhập chuỗi 256 ký tự 'A'".
 - Đảm bảo bao phủ đủ: Positive (Luồng đúng), Negative (Luồng sai), Boundary (Biên), và UI/Validation.
 - Nếu Requirement đầu vào quá sơ sài hoặc có điểm logic vô lý, hãy tạm dừng việc sinh Test Case và liệt kê các "Câu hỏi/Làm rõ với PO/BA" trước.
-- **THAM CHIẾU KIỂM TRA:** Bắt buộc phải đối chiếu với danh sách tại `references/test_case_checklist.md` để đảm bảo không bỏ sót việc check 
+- **THAM CHIẾU KIỂM TRA:** Bắt buộc phải đối chiếu với danh sách tại `references/test_design_techniques.md` để đảm bảo không bỏ sót việc check 
