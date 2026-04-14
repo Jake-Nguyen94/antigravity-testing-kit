@@ -47,7 +47,7 @@ Typical prompts include:
 - Generate Selenium automation from test case
 - Generate automation from UI steps
 - Generate API tests from Swagger
-- Generate regression suite
+- Generate regression suite → _(redirect sang `generate_application_test_plan` hoặc `generate_manual_testcases_rbt`)_
 - Generate test data
 - Analyze flaky test
 - Generate locator for element
@@ -122,7 +122,7 @@ Triggers when user asks:
 
 ### Generate regression suite
 
-Use workflow: `generate_regression_suite`
+> **Không có workflow riêng.** Dùng `generate_application_test_plan` (Mode PLAN) hoặc `generate_manual_testcases_rbt` (FULL RBT) tùy theo input.
 
 Triggers when user asks:
 
@@ -133,6 +133,8 @@ Triggers when user asks:
 
 ### Generate automation framework
 
+> **Delegate:** Tác vụ này sử dụng skill **`framework_architect`** để thiết kế framework.
+
 Use workflow: `generate_automation_framework`
 
 Triggers when user asks:
@@ -140,6 +142,9 @@ Triggers when user asks:
 - create automation framework
 - design Selenium framework
 - design Playwright framework
+- design Appium framework
+- scaffold automation project
+- thiết kế framework mới
 
 ---
 
@@ -147,11 +152,16 @@ Triggers when user asks:
 
 Use workflow: `generate_application_test_plan`
 
+> Workflow này có **2 modes**: PLAN (mặc định — chỉ test plan) và FULL (test plan + automation skeleton).
+> Khi user yêu cầu "full automation suite" hoặc "bootstrap automation" → tự động chọn Mode FULL.
+
 Triggers when user asks:
 
 - explore application
 - discover test scenarios
 - generate test plan
+- generate full automation suite
+- bootstrap automation for project
 
 ---
 
@@ -163,17 +173,6 @@ Triggers when user asks:
 
 - why is this test flaky
 - analyze unstable automation
-
----
-
-### Generate full automation suite
-
-Use workflow: `generate_full_automation_suite`
-
-Triggers when user asks:
-
-- generate full automation suite
-- bootstrap automation for project
 
 ---
 
