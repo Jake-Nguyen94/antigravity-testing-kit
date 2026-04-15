@@ -156,7 +156,7 @@ Agent sử dụng skills trong `.agent/skills/` tùy theo nhiệm vụ:
 | `ui_debug_agent`         | Inspect UI/DOM, thu thập locators                                                        |
 | `smart_locator_agent`    | Sinh locator mới ổn định                                                              |
 | `locator_healer_agent`   | Sửa locator hỏng                                                                        |
-| `test_data_generator`    | Sinh test data unique, traceable                                                          |
+| `test_data_generator`    | Sinh test data unique, traceable — hỗ trợ multi-step pipeline & combinatorial data       |
 | `flaky_test_analyzer`    | Phân tích và khắc phục flaky tests                                                   |
 | `jira_integration`       | Tích hợp Jira/Xray — lấy requirements, đẩy test results                             |
 
@@ -174,6 +174,11 @@ Các bộ prompt template sẵn dùng trong `plans/`:
   - Xem `plans/automation/QUICK_START.md` để bắt đầu nhanh
   - One-click: Copy `plans/automation/prompt_automation.txt`
   - Workflow: `/generate_automation_from_testcases`
+- **`plans/cross-module/`** — Quy trình phân tích Cross-Module & Ma trận kết hợp
+
+  - Xem `plans/cross-module/QUICK_START.md` để bắt đầu nhanh
+  - Workflow phân tích: `/generate_cross_module_test_plan`
+  - Workflow sinh data: `/generate_combinatorial_test_data`
 
 ## 7. Test Data
 
@@ -230,6 +235,8 @@ Agent sử dụng workflows trong `.agent/workflows/` qua slash commands:
 | `/generate_automation_framework`        | Thiết kế automation framework                             |
 | `/generate_locator`                     | Sinh locator ổn định cho UI element                      |
 | `/generate_test_data`                   | Sinh test data có cấu trúc                               |
+| `/generate_cross_module_test_plan`    | Phân tích cross-module, sinh Data Flow Map + ma trận kết hợp (Pairwise/Cartesian) |
+| `/generate_combinatorial_test_data`   | Sinh test data cho ma trận kết hợp — offline hoặc pipeline qua browser          |
 | `/generate_api_tests_from_swagger`      | Sinh API tests từ Swagger spec                             |
 | `/analyze_flaky_tests`                  | Phân tích và khắc phục flaky tests                     |
 | `/fetch_jira_requirements`              | Lấy requirements/user stories từ Jira                     |

@@ -33,9 +33,11 @@ Workflow này giúp agent phân tích Swagger/OpenAPI specification, xác địn
 ### Bước 1: Tiếp nhận & Phân tích Spec (Parse & Analyze)
 
 1. **Thu thập Swagger/OpenAPI spec** từ user:
-   - **URL** (VD: `https://api.example.com/swagger.json`) → dùng `read_url_content` để fetch
+   - **URL trực tiếp** (VD: `https://api.example.com/swagger.json`) → dùng `read_url_content` để fetch
    - **File local** (JSON/YAML) → dùng `view_file` để đọc
    - **Swagger UI URL** → trích xuất URL spec gốc (thường là `/v2/api-docs` hoặc `/v3/api-docs`)
+   - **Scalar API Reference URL** → inspect HTML để tìm `data-configuration` chứa URL spec (thường là `/swagger/json`, `/reference/json`, hoặc relative path trong attribute `url`). VD: `https://book.anhtester.com/swagger` → spec tại `https://book.anhtester.com/swagger/json`
+   - **Các dạng API Doc khác** (Redoc, Stoplight, RapiDoc) → tìm URL spec trong page source hoặc network requests
 2. **Parse spec** và trích xuất thông tin:
    - Base URL, API version, authentication scheme (Bearer, API Key, OAuth2, Basic)
    - Danh sách tất cả endpoints: `method + path`
@@ -205,6 +207,7 @@ Workflow này giúp agent phân tích Swagger/OpenAPI specification, xác địn
 | Lỗi | Nguyên nhân | Cách xử lý |
 |---|---|---|
 | Swagger URL trả về HTML | URL là Swagger UI, không phải spec | Tìm URL spec gốc (`/v2/api-docs`, `/v3/api-docs`, `/swagger.json`) |
+| Scalar URL trả về HTML | URL là Scalar API Reference UI | Inspect HTML tìm `data-configuration` → lấy field `url` → nối với base URL. Thử: `/swagger/json`, `/reference/json` |
 | Spec rỗng hoặc không parse được | File corrupt hoặc format không chuẩn | Hỏi user cung cấp lại, thử convert YAML ↔ JSON |
 | Auth endpoint không rõ | Spec không document auth flow | Hỏi user về auth method và cách lấy token |
 | Response schema khác spec | API thực tế không khớp với document | Note là known issue, adjust test theo response thực tế |

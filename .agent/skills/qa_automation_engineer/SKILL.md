@@ -120,6 +120,40 @@ Triggers when user asks:
 
 ---
 
+### Analyze cross-module feature & generate combinatorial matrix
+
+Use workflow: `generate_cross_module_test_plan`
+
+> Workflow dành cho **tính năng phức tạp đi qua nhiều modules nối tiếp**. Sinh Data Flow Map + Ma trận kết hợp đa chiều (Pairwise / Business-critical / Full Cartesian).
+
+Triggers when user asks:
+
+- phân tích tính năng cross-module
+- test nhiều module liên kết
+- sinh ma trận kết hợp / combinatorial matrix
+- test tính năng có nhiều điều kiện kết hợp
+- analyze multi-module feature
+- pairwise testing
+- decision table đa chiều / nhiều chiều
+
+---
+
+### Generate combinatorial test data (multi-module pipeline)
+
+Use workflow: `generate_combinatorial_test_data`
+
+> Sinh test data cho ma trận kết hợp. Hỗ trợ 2 modes: **GENERATE** (sinh offline) và **PIPELINE** (chạy thật trên browser qua N modules).
+
+Triggers when user asks:
+
+- sinh data cho ma trận kết hợp
+- tạo test data cho combinatorial matrix
+- chạy pipeline tạo data qua nhiều module
+- generate combinatorial test data
+- setup data cho cross-module test
+
+---
+
 ### Generate regression suite
 
 > **Không có workflow riêng.** Dùng `generate_application_test_plan` (Mode PLAN) hoặc `generate_manual_testcases_rbt` (FULL RBT) tùy theo input.
@@ -285,9 +319,12 @@ The agent may consult additional documentation in the `references/` folder:
 
 - `PROJECT_CONTEXT.md` — Project domain, tech stack, key modules
 - `TEST_STRATEGY.md` — Testing objectives, scope, execution plan
-- `REPOSITORY_MAP.md` — Repository structure and navigation guide
-- `SELF_CHECK.md` — Quality checklist before completing tasks
 - `PROMPT_TEMPLATES.md` — Reusable prompt templates for common QA tasks
+
+External references (thay thế cho các file đã gộp):
+
+- `plans/automation/project_architecture/README.md` — Repository structure & project architecture (thay thế REPOSITORY_MAP.md)
+- `GEMINI.md` > "Cleanup & Delivery" — Quality checklist / Definition of Done (thay thế SELF_CHECK.md)
 
 ---
 

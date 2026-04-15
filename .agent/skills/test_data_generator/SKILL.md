@@ -149,6 +149,101 @@ Provide data in structured format:
 
 ---
 
+## Multi-Step Data Pipeline (Cross-Module)
+
+> Mở rộng cho bài toán: test data cần đi qua **nhiều modules nối tiếp** mới tạo ra được data hoàn chỉnh cho module cuối.
+
+### Khi nào dùng
+
+- Tính năng đi qua chuỗi N modules (VD: Đối tác → Thanh toán → Thuế → Biên bản)
+- Data module sau **phụ thuộc** output module trước (Reference fields)
+- Cần tạo data thật trên hệ thống qua browser
+
+### Data Chain Pattern
+
+```
+Module 1 → Output: {id_1, code_1}
+    ↓ (Reference)
+Module 2 → Input: {id_1} → Output: {id_2}
+    ↓ (Reference)
+Module 3 → Input: {id_1, id_2} → Output: {id_3}
+    ↓ (Reference)
+Module N → Input: {id_1..id_N-1} → Output: Final Result
+```
+
+### Field Classification
+
+| Loại field | Mô tả | Cách sinh data |
+|-----------|-------|----------------|
+| **Dimension field** | Giá trị thuộc chiều kết hợp trong ma trận | Lấy chính xác từ bộ combo — KHÔNG random |
+| **Supporting field** | Bắt buộc nhưng không phải dimension | Random + unique + traceable |
+| **Reference field** | ID/code từ output module trước | Copy từ output module trước trong chuỗi |
+| **Computed field** | Tự tính từ formula/business rules | Tính theo formula — phải verify |
+
+### Data Chain Tracing Format
+
+```
+auto_combo{XX}_{module_short}_{timestamp}
+```
+
+Ví dụ cho combo 01:
+```
+Module 1: partner_name  = "auto_c01_partner_1712049200"
+Module 2: payment_desc  = "auto_c01_payment_1712049200"
+Module 3: tax_note      = "auto_c01_tax_1712049200"
+→ Có thể trace: combo 01 tạo ra những data nào ở mỗi module
+```
+
+---
+
+## Combinatorial Data Generation
+
+> Sinh bộ data cho **ma trận kết hợp đa chiều** — mỗi bộ kết hợp = 1 bộ data hoàn chỉnh.
+
+### Khi nào dùng
+
+- Đã có ma trận kết hợp (từ `/generate_cross_module_test_plan`)
+- Cần sinh N bộ data tương ứng N bộ kết hợp
+- Mỗi bộ data phải có expected output (template, formula, computed values)
+
+### Combinatorial Data Structure
+
+```json
+{
+  "combination_id": "COMBO_01",
+  "dimensions": {
+    "D1": "value_from_matrix",
+    "D2": "value_from_matrix"
+  },
+  "module_data": {
+    "module_1": { "field1": "...", "field2": "..." },
+    "module_2": { "ref_from_module1": "...", "field3": "..." }
+  },
+  "expected_output": {
+    "template": "EXPECTED_TEMPLATE_CODE",
+    "formula": "Amount × Rate",
+    "computed_values": { "total": 110000000 }
+  }
+}
+```
+
+### Rules cho Combinatorial Data
+
+| # | Rule |
+|---|------|
+| 1 | Dimension values PHẢI đúng 100% so với ma trận — KHÔNG random |
+| 2 | Mỗi combo dùng data riêng (unique per combo) |
+| 3 | Computed values phải đúng theo formula |
+| 4 | Mỗi combo PHẢI có expected output |
+| 5 | Traceable: prefix `auto_combo{XX}` |
+
+### Workflow tham chiếu
+
+- `/generate_cross_module_test_plan` → Sinh ma trận kết hợp (input cho skill này)
+- `/generate_combinatorial_test_data` → Workflow chính dùng skill này cho combinatorial data
+
+---
+
 ## Rules References
 
 - `.agent/rules/automation_rules.md` — Test data generation rules (Section 2)
